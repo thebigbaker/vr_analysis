@@ -47,29 +47,29 @@ function calculateResults(e) {
   const x = Math.pow(1 + calculatedInterest, calculatedPayments);
   const monthly = (principal * x * calculatedInterest) / (x-1);
 
-  if(isFinite(monthly)) {
-    mortgagePayment.value = monthly.toFixed(2);
-  
-
-  // Calculate Total Monthly Expenses
-  totalExpenses.value = (parseFloat(hoa.value) + parseFloat(tax.value) + parseFloat(insurance.value) + parseFloat(utilities.value) + parseFloat(mortgagePayment.value)).toFixed(2);
+  // Calculate Total Expenses
+  const expenses = parseFloat(hoa.value) + parseFloat(tax.value) + parseFloat(insurance.value) + parseFloat(utilities.value) + parseFloat(mortgagePayment.value)
 
   // Calculate Income Amounts
   const highAmount = parseFloat(highRate.value) * 105;
   const baseAmount = parseFloat(baseRate.value) * 260;
   const totalMonthlyAmount = (highAmount + baseAmount) / 12;
 
-  seventyPercent.value = (totalMonthlyAmount * 0.70).toFixed(2)
-  eightyPercent.value = (totalMonthlyAmount * 0.80).toFixed(2)
-  ninetyPercent.value = (totalMonthlyAmount * 0.90).toFixed(2)
-  
-  //Show results
-    document.getElementById('results').style.display = 'block';
-  /*console.log((ninetyPercent.value).toLocaleString('en'));*/
-  } else {
-    showError('Please check your numbers');
-  }
-  e.preventDefault();
+  if(isFinite(monthly && expenses && totalMonthlyAmount)) {
+    mortgagePayment.value = monthly.toFixed(2);
+    totalExpenses.value = expenses.toFixed(2);
+
+    seventyPercent.value = (totalMonthlyAmount * 0.70).toFixed(2)
+    eightyPercent.value = (totalMonthlyAmount * 0.80).toFixed(2)
+    ninetyPercent.value = (totalMonthlyAmount * 0.90).toFixed(2)
+    
+    //Show results
+      document.getElementById('results').style.display = 'block';
+    /*console.log((ninetyPercent.value).toLocaleString('en'));*/
+    } else {
+      showError('Please check your numbers');
+    }
+    e.preventDefault();
 };
 
 //Show Error
