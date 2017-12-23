@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Bootstrap 4 Starter Pack</title>
+    </head>
+
+    <body class="bg-dark">
+        <!-- Input Fields -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card card-body text-center mt-5">
+                        <h1 class="heading display-5 pb-3">VR Analysis</h1>
+                        <form id="vr-form">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+                                    <input type="text" id="address" class="form-control" placeholder="Address">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="bedrooms">Bedrooms</label>
+                                    <select id="bedrooms" class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                        <label for="bathrooms">Bathrooms</label>
+                                        <select id="bathrooms" class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                </div>
+                                <div class="col-4">
+                                    <label for="sqft">Total Sqft</label>
+                                        <input type="number" id="sqft" class="form-control" placeholder="Total Sq Ft">
+                                </div>
+                            </div>
+                            <div class="form-group mt-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="number" id="price" class="form-control" placeholder="Purchase Price">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">%</span>
+                                    <input type="number" id="interest" class="form-control" step="0.01" placeholder="Intrest Rate">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    <input type="number" id="years" class="form-control" placeholder="Payment Years">
+                                </div>
+                            </div>
+                            <h2 class="heading display-7 mt-4 pb-3">Expenses</h2>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="number" id="hoa" class="form-control" placeholder="Monthly HOA">   
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="number" id="tax" class="form-control" placeholder="Yearly Tax">   
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="number" id="insurance" class="form-control" placeholder="Insurance">   
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="number" id="utilities" class="form-control" placeholder="Monthly Utilities">  
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="number" id="pm" class="form-control" placeholder="Property Management">   
+                                </div>
+                            </div>
+                            <h2 class="heading display-7 mt-4 pb-3">Income</h2>
+                            <div class="row">
+                                <div class="input-group col-6">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="number" id="high-rate" class="form-control" placeholder="High Season Rate"> 
+                                </div>
+                                <div class="input-group col-6">
+                                        <span class="input-group-addon">$</span>
+                                        <input type="number" id="base-rate" class="form-control" placeholder="Base Rate"> 
+                                    </div>
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+                            </div>
+                        </form>
+
+                        <!-- Results -->
+                        <div id="results">
+                            <h2 class="heading display-4 font-weight-bold mt-5 pb-3">Results</h2>
+                            <h2 class="heading display-7 mt-4 pb-3">Expenses</h2>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">25% Down Payment</span>
+                                    <input type="number" id="down-payment" class="form-control" disabled>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Loan Amount</span>
+                                    <input type="number" id="loan-amount" class="form-control" disabled>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Mortgage Payment</span>
+                                    <input type="number" id="mortgage-payment" class="form-control" disabled>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Total Monthly Expenses</span>
+                                    <input type="text" id="total-expenses" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
