@@ -48,14 +48,14 @@ function calculateResults(e) {
   const monthly = (principal * x * calculatedInterest) / (x-1);
 
   // Calculate Total Expenses
-  const expenses = parseFloat(hoa.value) + parseFloat(tax.value) + parseFloat(insurance.value) + parseFloat(utilities.value) + parseFloat(mortgagePayment.value)
+  const expenses = parseFloat(hoa.value) + parseFloat(tax.value) + parseFloat(insurance.value) + parseFloat(utilities.value) + monthly
 
   // Calculate Income Amounts
   const highAmount = parseFloat(highRate.value) * 105;
   const baseAmount = parseFloat(baseRate.value) * 260;
-  const totalMonthlyAmount = (highAmount + baseAmount) / 12;
+  const totalMonthlyAmount = parseFloat((highAmount + baseAmount) / 12);
 
-  if(isFinite(monthly && expenses && totalMonthlyAmount)) {
+  if(isFinite(monthly)) {
     mortgagePayment.value = monthly.toFixed(2);
     totalExpenses.value = expenses.toFixed(2);
 
@@ -101,3 +101,12 @@ function showError(error) {
 function clearError(){
   document.querySelector('.alert').remove();
 };
+
+// Print results
+document.getElementById('print').addEventListener('click', printPage);
+
+function printPage(e) {
+  window.print();
+}
+
+
